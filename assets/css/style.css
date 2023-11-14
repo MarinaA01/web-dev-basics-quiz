@@ -56,3 +56,12 @@ button:hover {
     margin: 5px auto;
 }
 
+.timer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.timer h4 {
+    padding-right: 3px;
+    
+}

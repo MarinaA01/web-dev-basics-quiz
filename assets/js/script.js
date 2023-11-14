@@ -48,7 +48,7 @@ var startButton = document.querySelector("#start-button");
 let currentQuestionIndex = 0;
 
 var questionResult = ""
-var correctCounter = 0;
+
 var incorrectCounter = 0;
 var isCorrect = false;
 var timer;
@@ -97,7 +97,9 @@ function showQuestion() {
     });
 }
 
-
+nextButton.addEventListener('click', function() {
+    console.log(answers);
+})
 
 // function correctAnswer() {
 //     document.getElementById('correct').textContent("Correct!");
