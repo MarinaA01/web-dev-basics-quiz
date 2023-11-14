@@ -9,11 +9,38 @@
     <title>Coding Quiz Challenge</title>
 </head>
 <body>
-    <header>
-        
+    <header id="header">
+        <h1>Coding Quiz Challenge</h1>
+        <h2>Click on the correct answer</h2>
+        <button id="start-button">Start Quiz</button>
     </header>
     <main>
-
+        <section class="card question" id="quiz">
+            <div>
+                <h2 id="question">Quiz Question</h2>
+                <div id="answer-buttons">
+                    <!-- <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button> -->
+                </div>
+                <button id="next-btn">Continue</button>
+            </div>
+        </section>
+        <section class="card" id="results">
+            <div class="points-container">
+                <div>
+                    <h4 id="correct">Correct: <span class="correct">0</span></h4>
+                    <h4 id="incorrect">Incorrect: <span class="incorrect">0</span></h4>
+                </div>
+                    <button class="reset-button">Clear Score</button>
+                <div class="card timer">
+                    <div class="timer-text"></div>
+                    <h4>Time: </h4>
+                    <div class="timer-count">60</div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
 
