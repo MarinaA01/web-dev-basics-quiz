@@ -43,17 +43,12 @@ button:hover {
     background-color: #b275bd;
 }
 
-#quiz {
-    align-items: center;
-}
-
 .btn {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    align-items: left;
     margin: 5px auto;
+    width: 20%;
 }
 
 .timer {
@@ -61,7 +56,14 @@ button:hover {
     flex-direction: row;
     position: relative;
 }
+
 .timer h4 {
     padding-right: 3px;
-    
+
+}
+
+.points-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

@@ -18,12 +18,12 @@ const questions = [
         ]
     },
     {
-        question: "Arrays in JavaScript can be used to store ___",
+        question: "The condition in an if/else statement is enclosed with __",
         answers: [
-            {text: "numbers and strings", correct: false},
-            {text: "other arrays", correct: false},
-            {text: "booleans", correct: false},
-            {text: "all of the above", correct: true}
+            {text: "curly brackets", correct: false},
+            {text: "parentheses", correct: true},
+            {text: "quotes", correct: false},
+            {text: "square brackets", correct: false}
         ]
     },
     {
@@ -34,32 +34,29 @@ const questions = [
             {text: "booleans", correct: false},
             {text: "all of the above", correct: true}
         ]
-    }
+    },
 
 ];
 const questionEl = document.getElementById("question");
 const answerButton = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
-var correct = document.querySelector(".correct");
-var incorrect = document.querySelector(".incorrect");
+var correct = document.getElementById("correct");
+var incorrect = document.getElementById("incorrect");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector("#start-button");
 
 let currentQuestionIndex = 0;
 
-var questionResult = ""
-
+var correctCounter = 0;
 var incorrectCounter = 0;
-var isCorrect = false;
 var timer;
 var timerCount;
 
 const hideHeader = document.getElementById('header')
 
-function init () {
-    getCorrect();
-    getIncorrect();
-}
+// function init () {
+//     getCorrect();
+//     getIncorrect();
+// }
 
 function startQuiz() {
     currentQuestionIndex = 0;
@@ -69,8 +66,7 @@ function startQuiz() {
     timerCount = 60;
     startButton.disabled = true;
     hideHeader.style.display = 'none';
-    
-    // nextButton.innerHTML = "Next";
+
     startTimer();
     showQuestion();
 }
@@ -95,17 +91,30 @@ function showQuestion() {
             showQuestion()
         })
     });
+
+    if(answer === true) {
+        console.log("Correct!");
+        correct += 1;
+        correctCounter += 1;
+    } else {
+        console.log("Incorrect!");
+        incorrect += 1;
+        incorrectCounter += 1;
+    }
 }
 
-nextButton.addEventListener('click', function() {
-    console.log(answers);
-})
 
-// function correctAnswer() {
-//     document.getElementById('correct').textContent("Correct!");
-//     correctCounter++;
-//     startButton.disabled = false;
-//     // setCorrectAnswers()
+
+// function getResults () {
+//     if(questions === true) {
+//         correct += 1;
+//         console.log("Correct!");
+//     };
+//     if(questions === false) {
+//         timerCount -= 5;
+//         incorrect++;
+//         console.log("Incorrect");
+//     };
 // }
 
 // function failQuiz() {
@@ -125,12 +134,12 @@ function startTimer() {
         if (isCorrect && timerCount > 0) {
           // Clears interval and stops timer
           clearInterval(timer);
-          correctAnswer();
         }
       }
       if (timerCount === 0) {
         // Clears interval
         clearInterval(timer);
+        alert("You failed!");
         // getIncorrect();
       }
     }, 1000);
@@ -177,4 +186,8 @@ var resetButton = document.querySelector(".reset-button");
 function resetQuiz() {
     correctCounter = 0;
     incorrectCounter = 0;
+    clearInterval(timer);
+    button.disabled = true;
 }
+
+resetButton.addEventListener("click", resetQuiz);
