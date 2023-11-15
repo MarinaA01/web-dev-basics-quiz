@@ -72,7 +72,7 @@ function startQuiz() {
 
     startTimer();
     showQuestion();
-    selectAnswer();
+    // selectAnswer();
     showScore();
 }
 
