@@ -51,6 +51,14 @@ button:hover {
     width: 20%;
 }
 
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}
+
 .timer {
     display: flex;
     flex-direction: row;
